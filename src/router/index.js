@@ -4,12 +4,16 @@ import VueRouter from 'vue-router'
 import User from '../components/user.vue'
 
 const Home = {template: '<div>首页</div>'}
+const WatermelonVedio = {template: '<div>西瓜视频</div>'}
+const MicroHeadlines = {template: '<div>微头条</div>'}
 
 Vue.use(VueRouter);
 
 const routes = [
-    { path: '/user', component: User },
     { path: '/home', component: Home },
+    { path: '/wv', component: WatermelonVedio },
+    { path: '/mh', component: MicroHeadlines },
+    { path: '/user', component: User },
     { path: '*', redirect: '/home' },
 ]
   

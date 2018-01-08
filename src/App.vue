@@ -9,14 +9,14 @@
                   <i class="iconfont icon-shouye"></i>
                   <h2>首页</h2>
               </router-link>
-              <a href="">
+              <router-link to="/wv">
                   <i class="iconfont icon-bofang"></i>
                   <h2>西瓜视频</h2>
-              </a>                
-              <a href="">
+              </router-link>   
+              <router-link to="/mh">
                   <i class="iconfont icon-icon"></i>
                   <h2>微头条</h2>
-              </a>
+              </router-link>           
               <router-link to="/user">
                   <i class="iconfont icon-yonghu"></i>
                   <h2>未登录</h2>
