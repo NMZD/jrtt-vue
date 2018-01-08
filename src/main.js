@@ -3,11 +3,12 @@ import App from './App.vue'
 import router from './router/index.js'
 import Axios from 'axios'
 // 导入css
-import './css/zd_base.css'
-import './css/zd_common.css'
-import './css/zd_page.css'
-import './iconfont/iconfont.css'
-import './js/setFont'
+import './assets/css/zd_base.css'
+import './assets/css/zd_common.css'
+import './assets/css/zd_page.css'
+import './assets/css/animate.css'
+import './assets/iconfont/iconfont.css'
+import './assets/js/setFont'
 
 // 导入json文件
 import './json/login.json'

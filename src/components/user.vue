@@ -143,12 +143,12 @@
         name: "app",
         data() {
             return {
-            passLogin: false,
-            loginIsShow: false,
-            username: "",
-            password: "",
-            agreeTerms: false,
-            loginErr: ""
+                passLogin: false,
+                loginIsShow: false,
+                username: "",
+                password: "",
+                agreeTerms: false,
+                loginErr: ""
             };
         },
         methods: {

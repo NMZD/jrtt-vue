@@ -2,8 +2,7 @@
   <div class="container" id="app">
       <div class="g-df g-fdc b-h100">
           <div class="g-f1 g-content">
-            <router-view></router-view>
-            
+              <router-view></router-view>
           </div>
           <div class="g-df g-footer">
               <router-link to="/home">
