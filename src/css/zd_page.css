@@ -1,0 +1,213 @@
+.g-user-info {
+    padding: .25rem;
+    text-align: center;
+    background-color: #393939;
+}
+.user-info-tooltip {
+    font-size: 0.16rem;
+    color: #fff;
+}
+.login-way {
+    margin-top: .2rem;
+}
+.login-way-item {
+    width: .66rem;
+    height: .66rem;
+    margin-right: .1rem;
+    text-align: center;
+    line-height: .66rem;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.login-way-item .iconfont {
+    font-size: .33rem;
+}
+.login-way .icon-arrowright {
+    color: #fff;
+    font-size: .2rem;
+}
+.user-readingTime {
+    display: inline-block;
+    height: .36rem;
+    margin-top: .2rem;
+    padding: 0 .1rem;
+    border-radius: .18rem;
+    color: #fff;
+    font-size: .14rem;
+    line-height: .36rem;
+    background-color: #000;
+}
+.user-readingTime .icon-yueduliang {
+    margin-right: .05rem;
+    color: #FF5500;
+    font-size: .24rem;
+    vertical-align: middle;
+}
+.user-stat {
+    background-color: #fff;
+}
+.user-stat a {
+    -webkit-flex: 1;
+    flex: 1;
+    padding: .1rem 0;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+.user-stat a .iconfont {
+    font-size: .24rem;
+}
+.user-stat a .icon-shoucang {
+    color: #E39D25;
+}
+.user-stat a .icon-lishi {
+    color: #F34A8E;
+}
+.user-stat a .icon-yejianmoshi {
+    color: #8E89E5;
+}
+.user-stat a h2 {
+    margin-top: .05rem;
+}
+.user-action-list {
+    margin-top: .08rem;
+    padding-left: .15rem;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    background-color: #fff;
+}
+.user-action-list li {
+    -webkit-display: flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    padding: .15rem .15rem .15rem 0;
+    color: #2B2B2B;
+    border-bottom: 1px solid #ddd;
+}
+.user-action-list li:last-child {
+    border: none;
+}
+.user-action-list .user-action-title {
+    -webkit-flex: 1;
+    flex: 1;
+    margin-right: .1rem;
+    font-size: .16rem;
+    font-weight: normal;
+}
+.user-action-list li span {
+    margin-right: .05rem;
+    color: #ccc;
+    font-size: .14rem;
+}
+.user-action-list .icon-arrowright {
+    color: #ccc;
+    font-size: .16rem;
+}
+.login-popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: .1rem;
+    border-top-left-radius: .05rem;
+    border-top-right-radius: .05rem;
+    background-image: linear-gradient(180deg, #eee, #fff);  
+}
+.login-popup .login-p-close {
+    position: absolute;
+    right: .1rem;
+    top: .1rem;
+    font-size: .25rem;
+}
+.login-popup-tooltip {
+    margin-top: .5rem;
+    font-size: .24rem;
+    font-weight: normal;
+    text-align: center;
+    color: #333;
+}
+.login-main {
+    max-width: 80%;
+    margin: 0 auto;
+}
+.login-item {
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    height: .5rem;
+    margin-top: .2rem;
+    padding: 0 .15rem;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: .25rem;
+    background-color: #fff;
+}
+.login-item input {
+    -webkit-flex: 1;
+    flex: 1;
+    min-width: 1px;
+    height: 100%;
+    margin-right: .1rem;
+    font-size: .16rem;
+}
+.login-item .login-item-text {
+    padding-left: .15rem;
+    font-size: .16rem;
+    color: #666;
+    border-left: 1px solid #ccc;
+}
+.login-main .login-tooltip-s {
+    margin-top: .05rem;
+    height: .14rem;
+    font-size: .1rem;
+    line-height: .14rem;
+    color: #999;
+    text-align: center;
+}
+.login-btn {
+    height: .5rem;
+    margin-top: .05rem;
+    line-height: .5rem;
+    text-align: center;
+    color: #eee;
+    border-radius: .3rem;
+    background-color: #FFA3A5;
+}
+.login-btn.enable {
+    color: #fff;
+    background-color: #fd5358;
+}
+.login-btn.enable:active {
+    background-color: #f79092;
+}
+.login-agreement {
+    display: -webkit-flex;
+    display: flex;
+    margin-top: 0.15rem;
+    -webkit-align-items: center;
+    align-items: center;
+    font-size: .12rem;
+    color: #666;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+.login-agreement label {
+    margin-left: 5px;
+}
+.login-agreement a {
+    color: #666;
+}
+.toggle-login-way {
+    margin-top: .2rem;
+    color: #73a1c5;
+    font-size: .14rem;
+    text-align: center;
+}
+.login-popup-way {
+    overflow-x: auto;
+    text-align: right;
+    white-space: nowrap;
+}
+
+

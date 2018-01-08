@@ -1,0 +1,29 @@
+body {
+    background-color: #f1f1f1;
+}
+.container {
+    height: 100%;
+}
+.g-content {
+	overflow-y: auto;
+}
+.g-footer {
+	overflow: scroll;
+	border-top: 1px solid #ddd;
+	background-color: #fff;
+}
+.g-footer a {
+	-webkit-flex: 1;
+	flex: 1;
+	padding: .05rem 0;
+	font-size: .12rem;
+	text-align: center;
+}
+.g-footer a .iconfont {
+	font-size: .24rem;
+}
+.g-footer a h2 {
+	margin-top: .02rem;
+	font-weight: normal;
+	color: #aaa;
+}

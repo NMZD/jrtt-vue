@@ -18,7 +18,8 @@ module.exports = {
           'vue-style-loader',
           'css-loader'
         ],
-      },      {
+      },
+      {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
@@ -38,6 +39,20 @@ module.exports = {
         options: {
           name: '/images/[name].[ext]?[hash]'
         }
+      },
+      {
+        test: /\.(ttf|woff|eot)$/,
+        loader: 'file-loader',
+        options: {
+          name: '/iconfont/[name].[ext]?[hash]'
+        }
+      },
+      {
+        test: /\.json$/,
+        loader:  'file-loader',
+        options: {
+          name: '/json/[name].[ext]?[hash]'
+        }
       }
     ]
   },
@@ -50,7 +65,8 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     noInfo: true,
-    overlay: true
+    overlay: true,
+    contentBase: './dist/'
   },
   performance: {
     hints: false
