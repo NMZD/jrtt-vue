@@ -37,14 +37,14 @@ module.exports = {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {
-          name: '/images/[name].[ext]?[hash]'
+          name: 'images/[name].[ext]?[hash]'
         }
       },
       {
         test: /\.(ttf|woff|eot)$/,
         loader: 'file-loader',
         options: {
-          name: '/iconfont/[name].[ext]?[hash]'
+          name: 'iconfont/[name].[ext]?[hash]'
         }
       },
       {

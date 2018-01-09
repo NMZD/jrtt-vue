@@ -1,29 +1,42 @@
 <template>
     <div>
         <div class="g-user-info">
-            <h2 class="user-info-tooltip f-tac">登录推荐更精彩</h2>
-            <div class="g-df login-way g-alc g-jcc">
-                <span class="login-way-item" @click="mobileLogin()">
-                    <i class="iconfont icon-shouji"></i>
-                </span>
-                <span class="login-way-item">
-                    <i class="iconfont icon-weixin"></i>
-                </span>
-                <span class="login-way-item">
-                    <i class="iconfont icon-QQ"></i>
-                </span>
-                <span class="login-way-item">
-                    <i class="iconfont icon-weibo"></i>
-                </span>
-                <span>
-                    <i class="iconfont icon-arrowright"></i>
-                </span>
+             <div class="loggedIn" v-if="loginSuccess">
+                <div class="g-df g-alc">
+                    <div class="user-avator">
+                        <img src="../assets/images/touxiang.jpg" alt="">
+                    </div>
+                    <h2 class="g-f1 user-name">用户名称</h2>
+                    <div class="user-readingTime">
+                        <i class="iconfont icon-yueduliang"></i>
+                        <span>今日阅读12分钟</span>
+                    </div>
+                </div>
             </div>
-            <div class="user-readingTime">
-                <i class="iconfont icon-yueduliang"></i>今日阅读
-                <span>12分钟</span>
+            <div class="notLoggedIn" v-else>
+                <h2 class="user-info-tooltip f-tac">登录推荐更精彩</h2>
+                <div class="g-df login-way g-alc g-jcc">
+                    <span class="login-way-item" @click="mobileLogin()">
+                        <i class="iconfont icon-shouji"></i>
+                    </span>
+                    <span class="login-way-item">
+                        <i class="iconfont icon-weixin"></i>
+                    </span>
+                    <span class="login-way-item">
+                        <i class="iconfont icon-QQ"></i>
+                    </span>
+                    <span class="login-way-item">
+                        <i class="iconfont icon-weibo"></i>
+                    </span>
+                    <span>
+                        <i class="iconfont icon-arrowright"></i>
+                    </span>
+                </div>
+                <div class="user-readingTime">
+                    <i class="iconfont icon-yueduliang"></i>今日阅读
+                    <span>12分钟</span>
+                </div>
             </div>
-
         </div>
         <div class="g-df user-stat">
             <a href="">
@@ -148,7 +161,8 @@
                 username: "",
                 password: "",
                 agreeTerms: false,
-                loginErr: ""
+                loginErr: "",
+                loginSuccess: false
             };
         },
         methods: {
@@ -166,9 +180,11 @@
                     username = response.data.username;
                     password = response.data.password;
                     if (_self.username == username && _self.password == password) {  //验证用户名密码
-                    _self.loginErr = "";
-                    _self.passLogin = false;
-                    _self.loginIsShow = false;
+
+                        _self.loginErr = "";
+                        _self.passLogin = false;
+                        _self.loginIsShow = false;
+                        _self.loginSuccess = true;
                     } else {
                     _self.loginErr = "账号或密码错误";
                     }
