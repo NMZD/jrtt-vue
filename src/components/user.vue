@@ -14,15 +14,15 @@
                 </div>
                 <div class="g-df g-alc user-count-box">
                     <a class="user-count" href="">
-                        <span class="num">11</span>
+                        <span class="num" >{{ dynamic }}</span>
                         <span>动态</span>
                     </a>
                     <a class="user-count" href="">
-                        <span class="num">11</span>
+                        <span class="num">{{ concerned }}</span>
                         <span>关注</span>
                     </a>
                     <a class="user-count" href="">
-                        <span class="num">11</span>
+                        <span class="num">{{ fans }}</span>
                         <span>粉丝</span>
                     </a>
                 </div>
@@ -103,6 +103,7 @@
             </li>
         </ul>
 
+        <div class="quitLogin" v-if="loginSuccess"  @click="quitLogin">退出登录</div>
 
         <div class="g-df g-fdc login-popup" v-if="loginIsShow">
           <i class="login-p-close iconfont icon-guanbi" @click="loginIsShow=false"></i>
@@ -141,7 +142,7 @@
                   <input type="text" name="" v-model="username">
               </div>
               <div class="login-item">
-                  <input type="text" name="" v-model="password">
+                  <input type="password" name="" v-model="password">
                   <span class="login-item-text">找回密码</span>
               </div> 
               <p class="login-tooltip-s">{{ loginErr }}</p> 
@@ -166,6 +167,7 @@
 
 <script>
     import axios from "axios";
+    import {setStorage, getStorage} from '../assets/js/common.js'
     export default {
         name: "app",
         data() {
@@ -176,53 +178,76 @@
                 password: "",
                 agreeTerms: true,
                 loginErr: "",
-                loginSuccess: false
+                loginSuccess: false,
+                dynamic: 0,
+                concerned: 0,
+                fans: 0
             };
         },
         methods: {
             mobileLogin: function() {
-            this.loginIsShow = true;
+                this.loginIsShow = true;
             },
             passlogin: function(msg) {
-            let username = "";
-            let password = "";
-            let _self = this;
-            
-            if (this.agreeTerms) { //判断是否选中条款
-                axios.get("json/login.json")
-                .then(response => {
-                    username = response.data.username;
-                    password = response.data.password;
-                    if (_self.username == username && _self.password == password) {  //验证用户名密码
-
-                        _self.loginErr = "";
-                        _self.passLogin = false;
-                        _self.loginIsShow = false;
-                        _self.loginSuccess = true;
-                    } else {
-                    _self.loginErr = "账号或密码错误";
-                    }
-                })
-                .catch( error => console.log(error));
-            } else {
-                return false;
-            }
+                let username = "";
+                let password = "";
+                let _self = this;
+                
+                if (this.agreeTerms) { //判断是否选中条款
+                    axios.get("json/login.json")
+                    .then(response => {
+                        console.log(response.data);
+                        username = response.data.username;
+                        password = response.data.password;
+                        if (_self.username == username && _self.password == password) {  //验证用户名密码
+                            _self.loginErr = "";
+                            _self.passLogin = false;
+                            _self.loginIsShow = false;
+                            _self.loginSuccess = true;
+                            _self.dynamic = response.data.dynamic
+                            _self.concerned = response.data.concerned
+                            _self.fans = response.data.fans
+                            setStorage('username',username);
+                        } else {
+                        _self.loginErr = "账号或密码错误";
+                        }
+                    })
+                    .catch( error => console.log(error));
+                } else {
+                    return false;
+                }
+            },
+            quitLogin () {
+                this.loginSuccess = false;
+                setStorage('username','');
             }
         },
         mounted: function() {
-            
+            const  _self = this;
+            if(getStorage('username')){
+                 axios.get("json/login.json")
+                .then(response => {
+                    _self.dynamic = response.data.dynamic
+                    _self.concerned = response.data.concerned
+                    _self.fans = response.data.fans
+                })
+                this.loginErr = "";
+                this.passLogin = false;
+                this.loginIsShow = false;
+                this.loginSuccess = true;
+            }
         },
         computed: {
             enableLoginBtn: function() {
-            if (
-                this.username != "" &&
-                this.password != "" &&
-                this.agreeTerms == true
-            ) {
-                return true;
-            } else {
-                return false;
-            }
+                if (
+                    this.username != "" &&
+                    this.password != "" &&
+                    this.agreeTerms == true
+                ) {
+                    return true;
+                } else {
+                    return false;
+                }
             }
         }
     };

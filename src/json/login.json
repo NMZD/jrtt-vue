@@ -1,4 +1,7 @@
 {
     "username": "test",
-    "password": "test"
+    "password": "test",
+    "dynamic": "10",
+    "concerned": "5",
+    "fans": "15"
 }

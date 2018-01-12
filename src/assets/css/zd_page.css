@@ -273,3 +273,16 @@
     font-size: .14rem;
     font-weight: bold;
 }
+
+.quitLogin {
+    margin: .1rem;
+    padding: .15rem;
+    text-align: center;
+    border-radius: .05rem;
+    color: #fff;
+    font-weight: bold;
+    background-color: rgb(248, 70, 70);
+}
+.quitLogin:active {
+    background-color: rgb(252, 35, 35);
+}
