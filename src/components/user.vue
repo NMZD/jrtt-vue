@@ -12,6 +12,20 @@
                         <span>今日阅读12分钟</span>
                     </div>
                 </div>
+                <div class="g-df g-alc user-count-box">
+                    <a class="user-count" href="">
+                        <span class="num">11</span>
+                        <span>动态</span>
+                    </a>
+                    <a class="user-count" href="">
+                        <span class="num">11</span>
+                        <span>关注</span>
+                    </a>
+                    <a class="user-count" href="">
+                        <span class="num">11</span>
+                        <span>粉丝</span>
+                    </a>
+                </div>
             </div>
             <div class="notLoggedIn" v-else>
                 <h2 class="user-info-tooltip f-tac">登录推荐更精彩</h2>
@@ -104,7 +118,7 @@
               <p class="login-tooltip-s">未注册手机验证后自动登录</p>  
               <div class="login-btn">进入头条</div>
               <div class="login-agreement">
-                  <input type="checkbox" name="">
+                  <input type="checkbox" name="" v-model="agreeTerms">
                   <label>我已阅读并同意"<a href="">用户协议和隐私条款</a>"</label>
               </div> 
               <p class="toggle-login-way" @click="passLogin=!passLogin">账号密码登录</p>
@@ -160,7 +174,7 @@
                 loginIsShow: false,
                 username: "",
                 password: "",
-                agreeTerms: false,
+                agreeTerms: true,
                 loginErr: "",
                 loginSuccess: false
             };

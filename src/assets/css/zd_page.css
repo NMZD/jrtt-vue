@@ -252,3 +252,24 @@
 .loggedIn .user-readingTime span {
     display: block;
 }
+.loggedIn .user-count-box {
+    margin-top: .4rem;
+}
+.loggedIn .user-count {
+    -webkit-flex: 1;
+    flex: 1;
+    color: #666;
+    font-size: .12rem;
+    line-height: 1.5em;
+    text-align: center;
+    border-right: 1px solid #666;
+}
+.loggedIn .user-count:last-child {
+    border-right: 0;
+}
+.loggedIn .user-count .num {
+    display: block;
+    color: #fff;
+    font-size: .14rem;
+    font-weight: bold;
+}
