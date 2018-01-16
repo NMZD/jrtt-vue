@@ -172,16 +172,16 @@
         name: "app",
         data() {
             return {
-                passLogin: false,
-                loginIsShow: false,
-                username: "",
+                loginIsShow: false,  // 是否显示登录
+                passLogin: false,  // 是否显示密码登录
+                username: "",  
                 password: "",
-                agreeTerms: true,
-                loginErr: "",
-                loginSuccess: false,
-                dynamic: 0,
-                concerned: 0,
-                fans: 0
+                agreeTerms: true,  // 是否同意条款
+                loginErr: "",  // 登录错误信息
+                loginSuccess: false,  // 是否登录成功
+                dynamic: 0,  // 动态
+                concerned: 0, // 关注
+                fans: 0  // 粉丝
             };
         },
         methods: {

@@ -2,8 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import User from '../components/user.vue'
+import Home from '../components/home.vue'
 
-const Home = {template: '<div>首页</div>'}
 const WatermelonVedio = {template: '<div>西瓜视频</div>'}
 const MicroHeadlines = {template: '<div>微头条</div>'}
 
