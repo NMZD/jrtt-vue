@@ -6,6 +6,7 @@
                 <input type="text" :placeholder="searchText">
             </div>
         </header>
+        <slot></slot>
     </div>
 </template>
 

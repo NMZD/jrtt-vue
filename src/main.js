@@ -14,6 +14,7 @@ import './assets/js/common'
 
 // 导入json文件
 import './json/login.json'
+import './json/news.json'
 
 
 new Vue({

@@ -96,6 +96,8 @@ frame{display: block;}
 .f-csd{cursor:default;}
 .f-csh{cursor:help;}
 .f-csm{cursor:move;}
+/* 滚动条 */
+.f-oya {overflow-y: auto;}
 
 /*盒模型 box*/
 .b-bsb{box-sizing: border-box;}
