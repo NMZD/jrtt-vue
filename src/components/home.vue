@@ -5,7 +5,7 @@
                 <div class="top-menu-list">
                     <a href="">关注</a>
                     <a class="active" href="">推荐</a>
-                    <a href="">视频</a>
+                    <a href="/home/test">视频</a>
                     <a href="">热点</a>
                     <a href="">社会</a>
                     <a href="">娱乐</a>
@@ -18,6 +18,7 @@
                 <span class="top-menu-more"><i class="iconfont icon-jia"></i></span>
             </div>
         </Head>
+        <router-view></router-view>
         <div class="g-f1 f-oya" id="news-list-box" @scroll="newsScroll">
             
             <ul class="news-list" id="news-list">
@@ -41,7 +42,7 @@
             <div class="loading" v-if="loading">
                 <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>    
             </div> 
-            <router-view></router-view>
+            
         </div>
         
     </div>
@@ -90,7 +91,7 @@
             },
             getNews: function(page){
                 let _self = this;
-                Axios.get('./json/news.json').then(function(response){
+                Axios.get('http://localhost:9999/json/news.json').then(function(response){
                     let data = response.data.data
                     for (let i = (page-1) * 8; i < page * 8; i++) {
                         if( i >= data.length){
