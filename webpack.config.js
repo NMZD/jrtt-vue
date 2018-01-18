@@ -63,10 +63,12 @@ module.exports = {
     extensions: ['*', '.js', '.vue', '.json']
   },
   devServer: {
+    port: 9999,
     historyApiFallback: true,
     noInfo: true,
     overlay: true,
-    contentBase: './dist/'
+    contentBase: './dist/',
+    
   },
   performance: {
     hints: false

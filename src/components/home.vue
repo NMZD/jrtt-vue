@@ -18,11 +18,11 @@
                 <span class="top-menu-more"><i class="iconfont icon-jia"></i></span>
             </div>
         </Head>
-        <div class="g-f1 f-oya">
+        <div class="g-f1 f-oya" id="news-list-box" @scroll="newsScroll">
             
-            <ul class="news-list">
+            <ul class="news-list" id="news-list">
                 <li v-for="item in newsList">
-                    <a class="news-item-link" href="">
+                    <a class="news-item-link" href=""> 
                         <div class="news-datail">
                             <h1 class="news-title">{{ item.title }}</h1>
                             <div class="news-info">
@@ -37,6 +37,11 @@
                     </a>
                 </li>
             </ul>
+
+            <div class="loading" v-if="loading">
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>    
+            </div> 
+            <router-view></router-view>
         </div>
         
     </div>
@@ -49,13 +54,16 @@
         data(){
             return {
                 searchText: '首页搜索内容',
+                page: 1,
+                loading: false,
                 newsList: [
                     // {
                     //     title: '',
                     //     source: '',
                     //     commentCount: '',
                     //     isHot: false,
-                    //     imgUrl: ''
+                    //     imgUrl: '',
+                    //     page: 1
                     // }
                 ]
             }
@@ -64,21 +72,40 @@
             Head
         },
         mounted(){
-            var _self = this;
-            Axios.get('./json/news.json').then(function(response){
-                let data = response.data.data
-                console.log(data);
-                for (let i = 0; i < 8; i++) {
-                    _self.newsList.push({
-                        title: data[i].title,
-                        source: data[i].source,
-                        isHot: data[i].hot,
-                        imgUrl: data[i].image_url,
-                        commentCount: data[i].comment_count
-                    })
+            this.getNews(this.page);
+        },
+        methods: {
+            newsScroll: function(){
+                let _self = this;
+                let newsBox = document.getElementById('news-list-box');
+                let newsList = document.getElementById('news-list');
+                if(newsList.clientHeight - newsBox.clientHeight == newsBox.scrollTop){
+                    this.loading = true;
+                    setTimeout(function(){
+                        _self.loading = false;
+                        _self.page++;
+                        _self.getNews(_self.page);
+                    },2000);
                 }
-            })
-            console.log(this)
+            },
+            getNews: function(page){
+                let _self = this;
+                Axios.get('./json/news.json').then(function(response){
+                    let data = response.data.data
+                    for (let i = (page-1) * 8; i < page * 8; i++) {
+                        if( i >= data.length){
+                            continue;
+                        }
+                        _self.newsList.push({
+                            title: data[i].title,
+                            source: data[i].source,
+                            isHot: data[i].hot,
+                            imgUrl: data[i].image_url,
+                            commentCount: data[i].comment_count
+                        })
+                    }
+                })
+            }
         }
     }
 </script>
