@@ -311,10 +311,13 @@
     font-size: .2rem;
     line-height: .3rem;
 }
-
+.top-menu {
+    border-bottom: 1px solid #ddd;
+}
 .top-menu-list {
     white-space: nowrap;
     overflow-x: scroll;
+    
 }
 .top-menu-list a {
     display: inline-block;

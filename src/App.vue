@@ -21,7 +21,7 @@
                   <i class="iconfont icon-yonghu"></i>
                   <h2>未登录</h2>
               </router-link>
-                             
+            
           </div>
       </div>
   </div>
@@ -30,7 +30,7 @@
 <script>
 
 export default {
-
+    
 };
 
 

@@ -235,6 +235,7 @@
                 this.passLogin = false;
                 this.loginIsShow = false;
                 this.loginSuccess = true;
+                this.$emit('input','我的');
             }
         },
         computed: {
