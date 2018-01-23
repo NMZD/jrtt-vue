@@ -37,7 +37,6 @@
         },
         mounted(){
             var menuList = document.getElementById('top-menu-list').getElementsByTagName('a');
-            console.log(this.$route.name);
             this.activeLink = this.$route.name;
         },
         methods: {

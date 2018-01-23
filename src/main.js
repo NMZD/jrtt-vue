@@ -17,6 +17,9 @@ import './json/login.json'
 import './json/news.json'
 import './json/vedio.json'
 
+window.myStorage = {
+  isLogin: false
+};
 
 new Vue({
   el: '#app',

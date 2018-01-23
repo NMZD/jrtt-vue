@@ -142,7 +142,7 @@
                   <input type="text" name="" v-model="username">
               </div>
               <div class="login-item">
-                  <input type="password" name="" v-model="password">
+                  <input type="password" name="" v-model="password" @keyup.enter="passlogin()">
                   <span class="login-item-text">找回密码</span>
               </div> 
               <p class="login-tooltip-s">{{ loginErr }}</p> 
@@ -174,8 +174,8 @@
             return {
                 loginIsShow: false,  // 是否显示登录
                 passLogin: false,  // 是否显示密码登录
-                username: "",  
-                password: "",
+                username: "test",  
+                password: "test",
                 agreeTerms: true,  // 是否同意条款
                 loginErr: "",  // 登录错误信息
                 loginSuccess: false,  // 是否登录成功
@@ -196,7 +196,6 @@
                 if (this.agreeTerms) { //判断是否选中条款
                     axios.get("json/login.json")
                     .then(response => {
-                        console.log(response.data);
                         username = response.data.username;
                         password = response.data.password;
                         if (_self.username == username && _self.password == password) {  //验证用户名密码
@@ -208,6 +207,7 @@
                             _self.concerned = response.data.concerned
                             _self.fans = response.data.fans
                             setStorage('username',username);
+                            myStorage.isLogin = true;
                         } else {
                         _self.loginErr = "账号或密码错误";
                         }
@@ -220,6 +220,7 @@
             quitLogin () {
                 this.loginSuccess = false;
                 setStorage('username','');
+                myStorage.isLogin = false;
             }
         },
         mounted: function() {

@@ -19,7 +19,7 @@
               </router-link>           
               <router-link to="/user">
                   <i class="iconfont icon-yonghu"></i>
-                  <h2>未登录</h2>
+                  <h2>{{ myStorage.isLogin ? "我的" : "未登录" }}</h2>
               </router-link>
             
           </div>
@@ -30,7 +30,11 @@
 <script>
 
 export default {
-    
+    data () {
+        return {
+            myStorage
+        }
+    }
 };
 
 

@@ -87,6 +87,7 @@ export default {
 }
 .vedio-list {
   padding: 0 0.1rem;
+  overflow: hidden;
   background-color: #fff;
 }
 .vedio-list a {
